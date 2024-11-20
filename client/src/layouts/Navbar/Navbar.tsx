@@ -1,27 +1,24 @@
 import React from "react";
-import "./Navbar.css";
+import "./Navbar.css"; // Link til CSS-filen
 
 const Navbar: React.FC = () => {
   return (
     <nav className="navbar">
-      <div className="navbar-logo">CodingNepal</div>
+      <div className="navbar-logo">Music Store</div>
       <ul className="navbar-links">
         <li>
-          <a href="#home" className="active">
+          <a href="/home" className="active">
             Home
           </a>
         </li>
         <li>
-          <a href="#about">About</a>
+          <a href="/account">My Account</a>
         </li>
         <li>
-          <a href="#services">Services</a>
+          <a href="/stores">Stores</a>
         </li>
         <li>
-          <a href="#contact">Contact</a>
-        </li>
-        <li>
-          <a href="#feedback">Feedback</a>
+          <a href="/Adminstraion">Contact</a>
         </li>
       </ul>
     </nav>

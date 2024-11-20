@@ -4,19 +4,23 @@
  * @param body  The request body (only relevant for POST and PUT)
  * @returns
  */
-export function makeOptions(method: string, body: object | null): RequestInit {
-  const opts: RequestInit = {
-    method: method,
-    headers: {
-      "Content-type": "application/json",
-      Accept: "application/json",
-    },
+export const makeOptions = (method: string, body?: unknown) => {
+  const headers = {
+    "Content-Type": "application/json",
+    Accept: "application/json",
   };
+
+  const options: RequestInit = {
+    method,
+    headers,
+  };
+
   if (body) {
-    opts.body = JSON.stringify(body);
+    options.body = JSON.stringify(body);
   }
-  return opts;
-}
+
+  return options;
+};
 
 /**
  * Utility Method to handle http-errors returned as a JSON-response with fetch

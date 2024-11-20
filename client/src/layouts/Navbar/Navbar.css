@@ -1,19 +1,22 @@
 /* Navbar container */
 .navbar {
+  position: sticky; /* Gør navbaren synlig ved scrolling */
+  top: 0;
+  z-index: 1000; /* Sørg for, at navbaren altid ligger øverst */
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background-color: #007bff; /* Blå baggrund */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Let skygge */
+  background-color: #333; /* Mørkegrå baggrund */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Stærkere skygge for definition */
 }
 
 /* Logo */
 .navbar-logo {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: bold;
-  color: white;
-  text-transform: capitalize; /* Ensartet tekst */
+  color: #f9c74f; /* Guld-farvet tekst */
+  text-transform: capitalize;
 }
 
 /* Navigation links */
@@ -27,10 +30,10 @@
 
 /* Links styling */
 .navbar-links li a {
-  color: white;
+  color: #f9f9f9; /* Lys tekstfarve */
   text-decoration: none;
   font-size: 1rem;
-  padding: 5px 10px;
+  padding: 5px 15px;
   border-radius: 5px;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -38,7 +41,7 @@
 /* Hover & active styling */
 .navbar-links li a:hover,
 .navbar-links li a.active {
-  background-color: white; /* Fremhæv med hvid baggrund */
-  color: #007bff; /* Skift tekstfarve til blå */
+  background-color: #f9c74f; /* Guld baggrund */
+  color: #333; /* Mørk tekstfarve */
   font-weight: bold; /* Fremhæv aktivt link */
 }

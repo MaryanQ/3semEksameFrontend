@@ -1,0 +1,133 @@
+/* Container for the form */
+.login-container {
+  background-color: white;
+  padding: 20px 25px;
+  border-radius: 8px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 300px; /* Smaller form width */
+  margin: 100px auto; /* Center form vertically and horizontally */
+  text-align: center;
+}
+
+/* Title of the form */
+.login-container h2 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+/* Form styling */
+.login-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px; /* Reduced gap between form elements */
+}
+
+/* Input fields styling */
+.login-container input[type="text"],
+.login-container input[type="password"] {
+  padding: 8px;
+  margin-bottom: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  width: 100%;
+}
+
+.login-container input[type="text"]:focus,
+.login-container input[type="password"]:focus {
+  border-color: #007bff;
+}
+
+/* Submit button styling */
+.login-container button {
+  padding: 10px;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  font-size: 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s;
+}
+
+.login-container button:hover {
+  background-color: #0056b3;
+}
+
+/* Switch between login/register */
+.login-container button[type="button"] {
+  background-color: transparent;
+  color: #007bff;
+  font-size: 12px;
+  border: none;
+  cursor: pointer;
+  margin-top: 12px;
+}
+
+.login-container button[type="button"]:hover {
+  text-decoration: underline;
+}
+
+/* Error and success message styling */
+.login-container p {
+  font-size: 14px;
+  margin-top: 1rem;
+}
+
+.login-container p[style*="color: red"] {
+  color: #e74c3c;
+}
+
+.login-container p[style*="color: green"] {
+  color: #2ecc71;
+}
+
+/* Navbar styling (for the login page only) */
+.login-navbar {
+  background-color: #333;
+  color: #fff;
+  width: 100%; /* Full width of the screen */
+  padding: 15px 0;
+  text-align: center;
+  font-size: 18px;
+  position: absolute; /* Position navbar at the top */
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Keep navbar on top */
+}
+
+.login-navbar a {
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  margin: 0 5px;
+}
+
+.login-navbar a:hover {
+  background-color: #575757;
+}
+
+/* Media query for responsiveness */
+@media (max-width: 600px) {
+  .login-container {
+    width: 90%; /* Form takes up 90% of screen width on mobile */
+    padding: 15px;
+  }
+
+  .login-container h2 {
+    font-size: 18px;
+  }
+
+  .login-container input[type="text"],
+  .login-container input[type="password"] {
+    font-size: 14px;
+  }
+
+  .login-container button {
+    font-size: 14px;
+  }
+}
