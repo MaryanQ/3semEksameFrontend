@@ -1,0 +1,44 @@
+/* Navbar container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #007bff; /* Blå baggrund */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Let skygge */
+}
+
+/* Logo */
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  text-transform: capitalize; /* Ensartet tekst */
+}
+
+/* Navigation links */
+.navbar-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Links styling */
+.navbar-links li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover & active styling */
+.navbar-links li a:hover,
+.navbar-links li a.active {
+  background-color: white; /* Fremhæv med hvid baggrund */
+  color: #007bff; /* Skift tekstfarve til blå */
+  font-weight: bold; /* Fremhæv aktivt link */
+}
