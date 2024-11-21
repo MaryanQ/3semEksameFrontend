@@ -1,49 +1,103 @@
-import { useState } from "react";
-import { register } from "../services/ApiFacade"; // Assuming authService contains your register function
+import React, { useState } from "react";
+import { register } from "../services/ApiFacade";
 
-const Register = () => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");
-  const [successMessage, setSuccessMessage] = useState("");
+const Register: React.FC = () => {
+  const [form, setForm] = useState({
+    username: "",
+    password: "",
+    name: "",
+    email: "",
+    phoneNumber: "",
+  });
+  const [error, setError] = useState<string | null>(null);
+  const [success, setSuccess] = useState(false);
 
-  const handleRegister = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setForm({ ...form, [name]: value });
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    const { username, password, name, email, phoneNumber } = form;
+
+    if (!username || !password || !name || !email || !phoneNumber) {
+      setError("All fields are required.");
+      return;
+    }
+
     try {
-      await register(username, password); // Call the register function
-      setSuccessMessage("Registration successful");
-      setErrorMessage("");
-    } catch (error) {
-      setErrorMessage((error as Error).message);
+      await register(username, password, name, email, phoneNumber);
+      setSuccess(true);
+      setError(null);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Registration failed.");
+      setSuccess(false);
     }
   };
 
   return (
     <div>
-      <h2>Register</h2>
-      <form onSubmit={handleRegister}>
+      <h2>Register if you're a new customer</h2>
+      {error && <p style={{ color: "red" }}>{error}</p>}
+      {success && (
+        <p style={{ color: "green" }}>
+          Registration successful! You can log in now as a customer.
+        </p>
+      )}
+      <form onSubmit={handleSubmit}>
         <div>
-          <label>Username</label>
+          <label>Username:</label>
           <input
             type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
+            name="username"
+            value={form.username}
+            onChange={handleChange}
             required
           />
         </div>
         <div>
-          <label>Password</label>
+          <label>Password:</label>
           <input
             type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            name="password"
+            value={form.password}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div>
+          <label>Name:</label>
+          <input
+            type="text"
+            name="name"
+            value={form.name}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div>
+          <label>Email:</label>
+          <input
+            type="email"
+            name="email"
+            value={form.email}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div>
+          <label>Phone Number:</label>
+          <input
+            type="tel"
+            name="phoneNumber"
+            value={form.phoneNumber}
+            onChange={handleChange}
             required
           />
         </div>
         <button type="submit">Register</button>
       </form>
-      {errorMessage && <p style={{ color: "red" }}>{errorMessage}</p>}
-      {successMessage && <p style={{ color: "green" }}>{successMessage}</p>}
     </div>
   );
 };

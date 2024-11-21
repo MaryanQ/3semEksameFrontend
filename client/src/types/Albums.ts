@@ -1,10 +1,11 @@
 export interface Album {
-  id: number; // Matches `Long` in backend
+  id: number;
   title: string;
   artist: string;
-  genre: string; // Genre som String (enum værdi fra backend)
+  genre: string;
   available: boolean;
-  storeId?: number; // Reference til Store; valgfri (kan være null)
+  storeId?: number;
   liked: boolean;
-  imageUrl?: string; // URL til billede; valgfri (kan være null)
+  storeName?: string;
+  imageUrl?: string;
 }

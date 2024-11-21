@@ -1,0 +1,62 @@
+.dashboard-container {
+  padding: 20px;
+}
+
+.dashboard-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.album-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.album-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: #f9f9f9;
+  text-align: center;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.album-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-bottom: 1px solid #ddd;
+}
+
+.album-info {
+  margin-top: 10px;
+}
+
+.album-actions {
+  margin-top: 10px;
+}
+
+.album-actions .button {
+  margin: 5px;
+}
+
+.add-album-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed #aaa;
+  border-radius: 10px;
+  padding: 20px;
+  cursor: pointer;
+}
+
+.add-album-content {
+  text-align: center;
+}
+
+.add-button {
+  font-size: 24px;
+  padding: 10px;
+}

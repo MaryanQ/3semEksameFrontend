@@ -1,47 +1,91 @@
 /* Navbar container */
 .navbar {
-  position: sticky; /* Gør navbaren synlig ved scrolling */
-  top: 0;
-  z-index: 1000; /* Sørg for, at navbaren altid ligger øverst */
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Space between logo and nav items */
   align-items: center;
-  padding: 10px 20px;
-  background-color: #333; /* Mørkegrå baggrund */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Stærkere skygge for definition */
+  background-color: #333333; /* Dark gray background */
+  padding: 15px 30px; /* Larger padding for a modern look */
+  font-family: "Roboto", sans-serif;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
-/* Logo */
-.navbar-logo {
-  font-size: 1.8rem;
+/* Logo or store name on the left */
+.navbar .navbar-logo {
+  font-size: 1.5rem; /* Larger font for the logo */
   font-weight: bold;
-  color: #f9c74f; /* Guld-farvet tekst */
-  text-transform: capitalize;
+  color: white;
+  text-transform: uppercase;
+  text-decoration: none;
 }
 
-/* Navigation links */
-.navbar-links {
-  display: flex;
-  gap: 20px;
+/* Navigation list container */
+.navbar ul {
   list-style: none;
+  display: flex;
+  gap: 25px; /* Spacing between links */
+  align-items: center;
   margin: 0;
   padding: 0;
 }
 
-/* Links styling */
-.navbar-links li a {
-  color: #f9f9f9; /* Lys tekstfarve */
+/* Navigation links */
+.navbar a {
   text-decoration: none;
+  color: white; /* White text for links */
   font-size: 1rem;
-  padding: 5px 15px;
-  border-radius: 5px;
+  padding: 10px 15px;
+  border-radius: 4px;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Hover & active styling */
-.navbar-links li a:hover,
-.navbar-links li a.active {
-  background-color: #f9c74f; /* Guld baggrund */
-  color: #333; /* Mørk tekstfarve */
-  font-weight: bold; /* Fremhæv aktivt link */
+.navbar a:hover {
+  background-color: #4d4d4d; /* Slightly lighter gray on hover */
+  color: #ffffff; /* Keep text white on hover */
+}
+
+/* Buttons (e.g., login, logout) */
+.navbar button {
+  background-color: #4d4d4d; /* Slightly lighter gray for buttons */
+  color: white; /* White text */
+  border: 1px solid #5a5a5a; /* Subtle border */
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.navbar button:hover {
+  background-color: #666666; /* Even lighter gray on hover */
+  color: white;
+  border-color: #7a7a7a;
+}
+
+/* Logout button with a distinct red color */
+.logout-button {
+  background-color: #ff4d4f; /* Red for logout */
+  border: none;
+}
+
+.logout-button:hover {
+  background-color: #d93636; /* Darker red on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar ul {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 15px; /* Reduced gap for smaller screens */
+  }
+
+  .navbar a,
+  .navbar button {
+    padding: 12px 20px;
+    width: 100%; /* Full width for smaller devices */
+    text-align: right; /* Align text to the right */
+  }
 }

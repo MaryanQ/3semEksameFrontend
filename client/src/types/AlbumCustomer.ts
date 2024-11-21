@@ -1,9 +1,9 @@
 export interface AlbumCustomerDTO {
-  id: number; // Corresponds to Long in Java
-  albumId: number; // Corresponds to Long in Java
+  id: number;
+  albumId: number;
   albumTitle: string;
   albumArtist: string;
-  interestDate: string; // Corresponds to LocalDate in Java (you may use string or Date depending on your date handling)
+  interestDate: string;
   available: boolean;
   notified: boolean;
 }

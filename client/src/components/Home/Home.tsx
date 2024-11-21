@@ -15,7 +15,7 @@ const Home: React.FC = () => {
 
   return (
     <div className="container mt-4">
-      <h1>Music Store</h1>
+      <h1>VinylVibes</h1>
       <div className="row">
         {albums.map((album) => (
           <AlbumCard key={album.id} album={album} onLike={() => {}} />
